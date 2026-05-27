@@ -281,6 +281,16 @@ img.app-ui{max-width:190px;width:100%;border-radius:12px;box-shadow:0 12px 40px 
 }
 .back-btn:hover{color:var(--accent)}
 </style>
+<script>
+function go(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('p-' + name).classList.add('active');
+  window.scrollTo(0, 0);
+  document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+  const el = document.getElementById(name === 'home' ? 'n-home' : 'n-' + name);
+  if (el) el.classList.add('active');
+}
+</script>
 </head>
 <body>
 
@@ -1050,17 +1060,5 @@ img.app-ui{max-width:190px;width:100%;border-radius:12px;box-shadow:0 12px 40px 
     </div>
   </div>
 </div>
-
-
-<script>
-function go(name) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('p-' + name).classList.add('active');
-  window.scrollTo(0, 0);
-  document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
-  const el = document.getElementById(name === 'home' ? 'n-home' : 'n-' + name);
-  if (el) el.classList.add('active');
-}
-</script>
 </body>
 </html>
